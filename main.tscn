@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://j42eqx5qun5n"]
+
+[ext_resource type="Texture2D" uid="uid://dynefydobugu1" path="res://icon.svg" id="1_a2wdc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxvuv"]
+size = Vector2(800, 4)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vwykg"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eucbf"]
+
+[node name="Main" type="Node2D"]
+
+[node name="container_wall" type="StaticBody2D" parent="."]
+position = Vector2(571, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="container_wall"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hxvuv")
+
+[node name="ColorRect" type="ColorRect" parent="container_wall"]
+offset_left = -400.0
+offset_top = -1.0
+offset_right = 400.0
+offset_bottom = 3.0
+
+[node name="container_wall2" type="StaticBody2D" parent="."]
+position = Vector2(171, 340)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="container_wall2"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hxvuv")
+
+[node name="ColorRect" type="ColorRect" parent="container_wall2"]
+offset_left = -400.0
+offset_top = -1.0
+offset_right = 400.0
+offset_bottom = 3.0
+
+[node name="container_wall3" type="StaticBody2D" parent="."]
+position = Vector2(971, 341)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="container_wall3"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hxvuv")
+
+[node name="ColorRect" type="ColorRect" parent="container_wall3"]
+offset_left = -400.0
+offset_top = -1.0
+offset_right = 400.0
+offset_bottom = 3.0
+
+[node name="particle" type="RigidBody2D" parent="."]
+position = Vector2(589, 176)
+physics_material_override = SubResource("PhysicsMaterial_vwykg")
+
+[node name="Icon" type="Sprite2D" parent="particle"]
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("1_a2wdc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="particle"]
+shape = SubResource("CircleShape2D_eucbf")
